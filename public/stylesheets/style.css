@@ -5,3 +5,10 @@ body {
 a {
   color: #00B7FF;
 }
+
+#mainbg {
+	background-color: #192a56;
+	height: 100%;
+	color: white;
+	padding-top: 10%;
+}
