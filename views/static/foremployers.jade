@@ -1,5 +1,15 @@
 extends ../layout
 
 block content
-	include partials/navbar.jade
-	h1 For Employers
+	include partials/mainnavbar.jade
+	div(id="mainbg")
+		div(class="container")
+			div(class="row")
+				div(class="col-md-6")
+					div(id="aboutMain")
+						h1(class="text-center") Hire high quality talent fast
+				div(class="col-md-6")
+					form
+						h2(class="text-center") Request Some Info
+						label(for="name") Full Name
+						input(class="form-control" type="text" name="name" required)

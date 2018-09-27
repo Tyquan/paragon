@@ -6,7 +6,11 @@ a {
   color: #00B7FF;
 }
 
-#mainContent, #mainBrand, #navLink {
+#mainNav {
+	background-color: black;
+}
+
+#mainContent, #mainBrand, #navLink, #subContent {
 	color: white;
 }
 
@@ -50,4 +54,14 @@ a {
 #myBtn:hover {
     background: #ddd;
     color: black;
+}
+
+@media only screen and (min-width: 960px) {
+    #mainContent {
+		margin-top: 10%;
+	}
+
+	#subContent {
+		margin-top: 5%;
+	}
 }
