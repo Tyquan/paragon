@@ -7,9 +7,55 @@ block content
 			div(class="row")
 				div(class="col-md-6")
 					div(id="aboutMain")
-						h1(class="text-center") Hire high quality talent fast
+						h1(class="text-center" id="mainh2") Hire high quality talent fast
+						br
+						img(class="img-fluid" src="/images/meeting.jpg")
 				div(class="col-md-6")
-					form
-						h2(class="text-center") Request Some Info
-						label(for="name") Full Name
-						input(class="form-control" type="text" name="name" required)
+					div(id="form")
+						form
+							h2(class="text-center") Request Some Info
+							label(for="name") Full Name
+							input(class="form-control" type="text" name="name" placeholder="ex. John Doe" required)
+							br
+							label(for="email") Email
+							input(class="form-control" type="email" name="email" placeholder="ex. JDoe@email.com" required)
+							br
+							label(for="phone") Phone Number
+							input(class="form-control" type="tel" name="phone" placeholder="000-000-0000" required)
+							br
+							div(class="row")
+								div(class="col-sm-6")
+									label(for="city") City
+									input(class="form-control" type="text" name="city" placeholder="ex. New York" required)
+								div(class="col-sm-6")
+									label(for="state") State
+									input(class="form-control" type="text" name="state" placeholder="ex. New York" required)
+							br
+							button(class="btn btn-outline-danger btn-lg btn-block") Request Some Info
+	div(class="container")
+		div(id="content-margin")
+			div(class="row")
+				div(class="col-md-6")
+					h2 Source Talent Fast and Easy
+					br
+					h5 Paragon Executive candidates are vetted and ready, so your pipeline fills up faster.
+					br
+					h5 On average, companies spend 50 sourcing hours per role filled.
+					br
+					h5 How can that time be used otherwise
+				div(class="col-md-6")
+					div(id="img-margin")
+						img(class="img-fluid" src="/images/network.jpg")
+		div(class="content-margin")
+			div(class="row")
+				div(class="col-sm-12")
+					h2 Industry Specialization
+			div(class="row")
+				div(class="col-md-3")
+					h4 IT
+				div(class="col-md-3")
+					h4 Project Management
+				div(class="col-md-3")
+					h4 Development
+				div(class="col-md-3")
+					h4 Media
