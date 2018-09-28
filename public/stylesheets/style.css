@@ -10,6 +10,10 @@ a {
   color: #00B7FF;
 }
 
+#navy {
+	background-color: white;
+}
+
 .footer {
   bottom: 0;
   width: 100%;
