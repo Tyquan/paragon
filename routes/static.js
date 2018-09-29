@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const Executive = require('../models/executive');
 
 /* GET home page. */
 router.get('/about', function(req, res, next) {
@@ -28,6 +29,15 @@ router.get('/login', function(req, res, next) {
 
 router.get('/signup', function(req, res, next) {
   res.render('signup', { title: 'Paragon Executives | Employee Signup' });
+});
+
+router.post('/executive', function(req, res, next) {
+	let executive = new Executive(req.body);
+	executive.save().then((data) => {
+		res.render('static/foremployers', { title: 'Paragon Executives | For Employers', message: "Information sent successfully. We will call you" });
+	}).catch((err) => {
+		next(err);
+	});
 });
 
 module.exports = router;
