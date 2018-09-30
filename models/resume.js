@@ -1,54 +1,15 @@
 var mongoose = require('mongoose');
 
-var jobSchema = mongoose.Schema({
+var resumeSchema = mongoose.Schema({
     title: {
         type: String,
         required: true
     },
-    company: {
+    body: {
         type: String,
         required: true
     },
-    city: {
-        type: String,
-        required: true
-    },
-    state: {
-        type: String,
-        required: true
-    },
-    details: {
-        type: String,
-        required: true
-    },
-    shortDetails: {
-        type: String,
-        required: true
-    },
-    category: {
-        type: String,
-        required: true
-    },
-    applicants: [{
-        name: {
-            type: String
-        },
-        years: {
-            type: String
-        },
-        body: {
-            type: String
-        },
-        date_created: {
-            type: Date,
-            default: Date.now
-        }
-    }],
     date_created: {
-        type: Date,
-        default: Date.now
-    },
-    updated: {
         type: Date,
         default: Date.now
     }
@@ -57,6 +18,6 @@ var jobSchema = mongoose.Schema({
   usePushEach: true
 });
 
-var Job = mongoose.model('Job', jobSchema);
+var Resume = mongoose.model('Resume', resumeSchema);
 
-module.exports = Job
+module.exports = Resume

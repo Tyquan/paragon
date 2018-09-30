@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+	include partials/mainnavbar.jade
+	div(class="container")
+		div(class="row")
+			div(class="col-md-12")
+				div(id="form")
+					form(method="POST" action="/static/upload")
+						h2(class="text-center") Send Us Your Resume
+						if message
+							div(id="message")
+								h4= message
+						br
+						label(for="name") Full Name
+						input(class="form-control" type="text" name="fullname" placeholder="ex. John Doe" required)
+						br
+						label(for="email") Paste Your Resume Here
+						textarea(class="form-control" type="text" name="details" required)
+						br
+						button(class="btn btn-outline-danger btn-lg btn-block") Send Resume
+	include partials/footer.jade

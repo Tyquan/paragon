@@ -1,0 +1,79 @@
+extends ../layout
+
+block content
+	include partials/mainnavbar.jade
+	div(class="container")
+		div(class="row")
+			div(class="col-md-12")
+				h1(class="text-center") Jobs
+				hr
+				if data < 1
+					h2(class="text-center") No Jobs Added Yet. How About Adding a New Job
+					br
+					div(id="newJob")
+						form(class="form" method="POST" action="/admin/jobs")
+							if message
+								div(id="message")
+									h5= message
+							br
+							label(for="title") Title
+							input(name="title" type="text" class="form-control" required)
+							label(for="company") Company
+							input(name="company" type="text" class="form-control" required)
+							label(for="city") City
+							input(name="city" type="text" class="form-control" required)
+							label(for="state") State
+							input(name="state" type="text" class="form-control" required)
+							label(for="category") Category
+							input(name="category" type="text" class="form-control" required)
+							label(for="shortDetails") Short Description
+							textarea(name="shortDetails" type="text" class="form-control" required)
+							label(for="details") Details
+							textarea(name="details" type="text" class="form-control" required)
+							br
+							button(class="btn btn-outline-success btn-lg btn-block") Add New Job
+				else
+					div(class="row")
+						div(class="col-md-6")
+							div(id="newJob")
+								h3(class="text-center") Add a New Job
+								form(class="form" method="POST" action="/admin/jobs")
+									if message
+										div(id="message")
+											h5= message
+									br
+									label(for="title") Title
+									input(name="title" type="text" class="form-control" required)
+									label(for="company") Company
+									input(name="company" type="text" class="form-control" required)
+									label(for="city") City
+									input(name="city" type="text" class="form-control" required)
+									label(for="state") State
+									input(name="state" type="text" class="form-control" required)
+									label(for="category") Category
+									input(name="category" type="text" class="form-control" required)
+									label(for="shortDetails") Short Description
+									textarea(name="shortDetails" type="text" class="form-control" required)
+									label(for="details") Details
+									textarea(name="details" type="text" class="form-control" required)
+									br
+									button(class="btn btn-outline-success btn-lg btn-block") Add New Job
+									br
+						div(class="col-md-6")
+							h3(class="text-center") Available Jobs
+							div("table-responsive")
+								table(class="table table-dark table-bordered table-hover table-condensed")
+									tr
+										th Title
+										th Category
+										th City
+										th State
+										th Date Created
+									each d in data
+										tr
+											td= d.title
+											td= d.category
+											td= d.city
+											td= d.state
+											td= d.date_created
+	include partials/footer.jade

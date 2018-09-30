@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+	include partials/mainnavbar.jade
+	div(class="container")
+		div(class="row")
+			div(class="col-md-12")
+				h1(class="text-center") Executive Contacts
+				hr
+				if data.length < 1
+					p No Data Available
+				else
+					div("table-responsive")
+						table(class="table table-dark table-bordered table-hover table-condensed")
+							tr
+								th Name
+								th Email
+								th Phone Number
+								th City
+								th State
+							each d in data
+								tr
+									td= d.fullname
+									td= d.email
+									td= d.phonenumber
+									td= d.city
+									td= d.state
+	include partials/footer.jade
