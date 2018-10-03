@@ -1,11 +1,27 @@
 var mongoose = require('mongoose');
 
 var resumeSchema = mongoose.Schema({
-    title: {
+    fullname: {
         type: String,
         required: true
     },
-    body: {
+    details: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    category: {
+        type: String,
+        required: true
+    },
+    city: {
+        type: String,
+        required: true
+    },
+    state: {
         type: String,
         required: true
     },

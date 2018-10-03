@@ -30,13 +30,16 @@ var jobSchema = mongoose.Schema({
         required: true
     },
     applicants: [{
-        name: {
+        fullname: {
             type: String
         },
-        years: {
+        email: {
             type: String
         },
-        body: {
+        phonenumber: {
+            type: String
+        },
+        details: {
             type: String
         },
         date_created: {

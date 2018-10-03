@@ -4,6 +4,7 @@ const nodemailer = require('nodemailer');
 const Executive = require('../models/executive');
 const settings = require("../config/settings");
 const Job = require('../models/job');
+const Resume = require('../models/resume');
 
 /* GET home page. */
 router.get('/about', function(req, res, next) {
@@ -48,6 +49,7 @@ router.get('/upload', function(req, res, next) {
 });
 
 router.post('/upload', function(req, res, next) {
+  var resume = new Resume(req.body);
   var transporter = nodemailer.createTransport({
     service: settings.emailService,
     auth: {
@@ -67,13 +69,73 @@ router.post('/upload', function(req, res, next) {
     if (error) {
       next(error);
     } else {
-      res.render('static/upload', {
-        title: 'Paragon Executives | Upload a Resume',
-        message: 'Resume successfully sent. We will call you as soon as possible'
+      resume.save().then((data) => {
+        res.render('static/upload', {
+          title: 'Paragon Executives | Upload a Resume',
+          message: 'Resume successfully sent. We will call you as soon as possible'
+        });
+      }).catch((err) => {
+        next(err);
       });
     }
   });
 
+});
+
+router.get("/application/:id", function(req, res, next) {
+  console.log(req.params);
+  Job.findById(req.params.id, (err, data) => {
+    if (err) {
+      next(err);
+    } else {
+      res.render('static/application', { 
+        title: 'Paragon Executives | Apply For The Job',
+        data: data
+      });
+    }
+  });
+});
+
+router.post("/application/:id", function(req, res, next) {
+  console.log(req.params);
+  Job.findById(req.params.id, (err, data) => {
+    if (err) {
+      next(err);
+    } else {
+      data.applicants.push(req.body);
+      data.save().then((newData) => {
+
+        var transporter = nodemailer.createTransport({
+          service: settings.emailService,
+          auth: {
+            user: settings.emailAuth.user,
+            pass: settings.emailAuth.pass
+          }
+        });
+
+        var mailOptions = {
+          from: settings.emailAuth.user,
+          to: settings.emailReciever,
+          subject: `New Application Submitted for Job: ${newData.title}`,
+          text: `A new application has arrived for the ${newData.title} position.\n\nName: ${req.body.fullname}\nEmail:${req.body.email}\nPhone Number: ${req.body.phonenumber}\n\n${req.body.details}\n\nParagonExecutives.com`
+        };
+
+        transporter.sendMail(mailOptions, function(error, info){
+          if (error) {
+            next(error);
+          } else {
+            res.render(`static/application`, {
+              title: 'Paragon Executives | Apply For The Job',
+              data: newData,
+              message: "Application Successfully Sent. We Will Call You."
+            });
+          }
+        });
+      }).catch((err) => {
+        next(err);
+      });
+    }
+  });
 });
 
 router.post('/executive', function(req, res, next) {

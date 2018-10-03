@@ -1,9 +1,19 @@
 body {
-  font: 14px 'Raleway', sans-serif;;
+  font-family: 'Dosis', sans-serif;
 }
 
 h1, h2 {
 	font-family: 'Merriweather', serif;
+}
+
+.customDisplay {
+	display: flex;
+	flex-flow: wrap;
+	flex-direction: row-reverse;
+}
+
+#marg {
+	padding-top: 5%;
 }
 
 a {
@@ -96,16 +106,6 @@ a {
     min-height: 100%;
 }
 
-/* Add some content at the bottom of the video/page */
-.content {
-    position: fixed;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    color: #f1f1f1;
-    width: 100%;
-    padding: 20px;
-}
-
 /* Style the button used to pause/play the video */
 #myBtn {
     width: 200px;
@@ -123,10 +123,37 @@ a {
 }
 
 #brand, #mainBrand {
-	font-family: 'Permanent Marker', cursive;
+	font-family: 'Noto Serif', serif;
+}
+
+@media screen and (min-width: 320px) {
+	/* Add some content at the bottom of the video/page */
+	.content {
+	    position: relative;
+	    bottom: 0;
+	    background: rgba(0, 0, 0, 0.5);
+	    color: #f1f1f1;
+	    width: 100%;
+	    padding: 20px;
+	}
+	#jobsContainer {
+		flex-direction: column;
+		background-color: #ecf0f1;
+		border-radius: 5px;
+		/*text-shadow: 2px 2px;*/
+		padding: 5%;
+		width: 100%;
+		margin: 1%;
+	}
 }
 
 @media only screen and (min-width: 960px) {
+	#jobsContainer {
+		width: 48%;
+	}
+	.content {
+	    position: fixed;
+	}
     #mainContent {
 		margin-top: 10%;
 	}

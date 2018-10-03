@@ -68,12 +68,12 @@ block content
 										th Category
 										th City
 										th State
-										th Date Created
+										th # of Applicants
 									each d in data
 										tr
 											td= d.title
 											td= d.category
 											td= d.city
 											td= d.state
-											td= d.date_created
+											td= d.applicants.length
 	include partials/footer.jade

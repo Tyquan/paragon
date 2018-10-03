@@ -37,11 +37,11 @@ router.get('/resumes', function(req, res, next) {
 			});
 		} else {
 			res.render("admin/resumes", {
-				data: data
+				data: data,
+				title: 'Paragon Executives | Sent Resumes'
 			});
 		}
 	});
-  res.render('admin/resumes', { title: 'Paragon Executives | Sent Resumes' });
 });
 
 router.post("/jobs", function(req, res) {

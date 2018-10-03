@@ -3,21 +3,24 @@ extends ../layout
 block content
 	video(autoplay muted loop id="myVideo")
 		source(src="videos/World - 1992.mp4" type="video/mp4")
+	include partials/navbar.jade
+	div(class="container-fluid")
+		div(class="row" id="mainContent")
+			div(class="col-md-4")
+				h3(class="text-center") Upload Your Resume
+				center
+					img(class="img-fluid" src="icons/document.png")
+			div(class="col-md-4")
+				h3(class="text-center") Match With A Job in Your Area
+				center
+					img(class="img-fluid" src="icons/pin.png")
+			div(class="col-md-4")
+				h3(class="text-center") Get Hired
+				center
+					img(class="img-fluid" src="icons/hand-shake.png")
 	div(class="content")
 		h2(class="text-center") Connect with a job you love.
 		h6(class="text-center") We're here to connect driven people with the world’s most innovative companies.
 		center
 			button(class="btn btn-primary")
 				a(href="/static/upload" id="alink") Upload Your Resume
-	include partials/navbar.jade
-	div(class="container-fluid")
-		div(class="row" id="mainContent")
-			div(class="col-md-4")
-				h3(class="text-center") Upload Your Resume
-			div(class="col-md-4")
-				h3(class="text-center") Match With A Job in Your Area
-			div(class="col-md-4")
-				h3(class="text-center") Get Hired
-		div(class="row" id="subContent")
-			div(class="col-sm-12")
-				h1(class="text-center") Simple

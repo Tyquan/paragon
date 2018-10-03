@@ -2,4 +2,28 @@ extends ../layout
 
 block content
 	include partials/mainnavbar.jade
-	h1 Jobs
+	div(class="container")
+		div(class="row")
+			div(class="col-md-12")
+				h1(class="text-center") Available Jobs
+		hr
+		div(class="customDisplay")
+			each d in data
+				div(id="jobsContainer")
+					div(class="row")
+						div(class="col-sm-6")
+							h4
+								a(href=`/static/application/${d.id}`)= d.title
+							p= d.company
+						div(class="col-sm-6")
+							h5
+								span= d.city 
+								span , 
+								span= d.state
+					div(class="row")
+						div(class="col-sm-12")
+							h6= d.shortDetails
+							br
+							a(href=`/static/application/${d.id}`)
+								button(class="btn btn-outline-danger btn-lg btn-block") Apply
+	include partials/footer.jade

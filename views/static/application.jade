@@ -5,9 +5,27 @@ block content
 	div(class="container")
 		div(class="row")
 			div(class="col-md-12")
+				br
+				h3= data.title
+				h5
+					span= data.company 
+					span - 
+					span= data.city 
+					span , 
+					span= data.state
+		br
+		div(class="row")
+			div(class="col-md-12")
+				p= data.shortDetails
+				br
+				p= data.details
+		hr
+		div(class="row")
+			div(class="col-md-12")
 				div(id="form")
-					form(method="POST" action="/static/upload")
-						h2(class="text-center") Send Us Your Resume
+					form(method="POST" action=`/static/application/${data.id}`)
+						h2(class="text-center") Application for 
+							span= data.title
 						if message
 							div(id="message")
 								h4= message
@@ -18,14 +36,8 @@ block content
 						label(for="email") Email
 						input(class="form-control" type="email" name="email" placeholder="ex. JohnDoe@example.com" required)
 						br
-						label(for="city") City
-						input(class="form-control" type="text" name="city" placeholder="ex. New York" required)
-						br
-						label(for="state") state
-						input(class="form-control" type="text" name="state" placeholder="ex. New York" required)
-						br
-						label(for="industry") Industry
-						input(class="form-control" type="text" name="category" placeholder="ex. Medical" required)
+						label(for="phonenumber") Phone Number
+						input(class="form-control" type="text" name="phonenumber" placeholder="ex. 123-456-7899" required)
 						br
 						label(for="email") Paste Your Resume Here
 						textarea(class="form-control" type="text" name="details" required)
