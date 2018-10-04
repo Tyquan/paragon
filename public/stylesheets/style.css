@@ -121,6 +121,12 @@ a {
     background: #ddd;
     color: black;
 }
+#abouttitle {
+    color: white;
+    background-color: black;
+    padding-left: 2%;
+    padding-right: 2%;
+}
 
 #brand, #mainBrand {
 	font-family: 'Noto Serif', serif;
