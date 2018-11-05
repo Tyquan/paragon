@@ -2,24 +2,30 @@ extends ../layout
 
 block content
 	include partials/mainnavbar.jade
+	div(id="margin")
 	div(class="container")
 		div(class="row")
 			div(class="col-md-12")
 				br
 				h3= data.title
-				h5
-					span= data.company 
-					span - 
-					span= data.city 
-					span , 
-					span= data.state
+				h5= data.location
+				h5= data.education
+				h5= data.compensation
+		hr
+		div(class="row")
+			div(class="col-md-12")
+				h4 Required Skills
+				div(id="skills")
 		br
 		div(class="row")
 			div(class="col-md-12")
-				p= data.shortDetails
-				br
-				p= data.details
-		hr
+				h4 Responsibilities
+				div(id="details")
+		br
+		div(class="row")
+			div(class="col-md-12")
+				h4 Benefits
+				div(id="benefits")
 		div(class="row")
 			div(class="col-md-12")
 				div(id="form")
@@ -44,3 +50,4 @@ block content
 						br
 						button(class="btn btn-outline-danger btn-lg btn-block") Send Resume
 	include partials/footer.jade
+	script(src="/javascripts/application.js")

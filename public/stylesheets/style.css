@@ -1,7 +1,9 @@
 body {
   font-family: 'Dosis', sans-serif;
 }
-
+#margin {
+	margin-top: 2%;
+}
 h1, h2 {
 	font-family: 'Merriweather', serif;
 }
@@ -10,6 +12,10 @@ h1, h2 {
 	display: flex;
 	flex-flow: wrap;
 	flex-direction: row-reverse;
+}
+
+#hit {
+	color: white;
 }
 
 #marg {

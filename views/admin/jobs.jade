@@ -18,18 +18,18 @@ block content
 							br
 							label(for="title") Title
 							input(name="title" type="text" class="form-control" required)
-							label(for="company") Company
-							input(name="company" type="text" class="form-control" required)
-							label(for="city") City
-							input(name="city" type="text" class="form-control" required)
-							label(for="state") State
-							input(name="state" type="text" class="form-control" required)
-							label(for="category") Category
-							input(name="category" type="text" class="form-control" required)
-							label(for="shortDetails") Short Description
-							textarea(name="shortDetails" type="text" class="form-control" required)
+							label(for="compensation") Compensation
+							input(name="compensation" type="text" class="form-control" required)
+							label(for="education") Education
+							input(name="education" type="text" class="form-control" required)
+							label(for="location") Location
+							input(name="location" type="text" class="form-control" required)
 							label(for="details") Details
 							textarea(name="details" type="text" class="form-control" required)
+							label(for="requiredSkills") Required Skills
+							textarea(name="requiredSkills" type="text" class="form-control" required)
+							label(for="benefits") Benefits
+							textarea(name="benefits" type="text" class="form-control" required)
 							br
 							button(class="btn btn-outline-success btn-lg btn-block") Add New Job
 				else
@@ -44,18 +44,18 @@ block content
 									br
 									label(for="title") Title
 									input(name="title" type="text" class="form-control" required)
-									label(for="company") Company
-									input(name="company" type="text" class="form-control" required)
-									label(for="city") City
-									input(name="city" type="text" class="form-control" required)
-									label(for="state") State
-									input(name="state" type="text" class="form-control" required)
-									label(for="category") Category
-									input(name="category" type="text" class="form-control" required)
-									label(for="shortDetails") Short Description
-									textarea(name="shortDetails" type="text" class="form-control" required)
+									label(for="compensation") Compensation
+									input(name="compensation" type="text" class="form-control" required)
+									label(for="education") Education
+									input(name="education" type="text" class="form-control" required)
+									label(for="location") Location
+									input(name="location" type="text" class="form-control" required)
 									label(for="details") Details
 									textarea(name="details" type="text" class="form-control" required)
+									label(for="requiredSkills") Required Skills
+									textarea(name="requiredSkills" type="text" class="form-control" required)
+									label(for="benefits") Benefits
+									textarea(name="benefits" type="text" class="form-control" required)
 									br
 									button(class="btn btn-outline-success btn-lg btn-block") Add New Job
 									br
@@ -65,15 +65,11 @@ block content
 								table(class="table table-dark table-bordered table-hover table-condensed")
 									tr
 										th Title
-										th Category
-										th City
-										th State
+										th Location
 										th # of Applicants
 									each d in data
 										tr
 											td= d.title
-											td= d.category
-											td= d.city
-											td= d.state
+											td= d.location
 											td= d.applicants.length
 	include partials/footer.jade

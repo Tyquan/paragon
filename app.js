@@ -25,6 +25,7 @@ var indexRouter = require('./routes/index');
 var staticRouter = require('./routes/static');
 var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/admin');
+var jobsRouter = require('./routes/jobs');
 
 var app = express();
 
@@ -51,6 +52,7 @@ app.use('/', indexRouter);
 app.use('/static', staticRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
+app.use('/jobs', jobsRouter);
 
 app.locals.pretty = true;
 

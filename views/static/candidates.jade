@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+	include partials/mainnavbar.jade
+	div(id="margin")
+	div(class="container")
+		div(class="row")
+			div(class="col-md-12")
+				p We encourage you to join our executive pool of talents:
+				a(href="/static/upload") Upload Your Resume
+		br
+		div(class="row")
+			div(class="col-md-12")
+				img(src="../images/success.jpg" width="100%" height="500px")
+		br
+		div(class="row")
+			div(class="col-md-6")
+				img(src="../images/time.jpg" width="100%" height="300px")
+			div(class="col-md-6")
+				img(src="../images/pen.jpg" width="100%" height="300px")
+		div(class="row")
+			div(class="col-md-12")
+				img(src="../images/hands.jpg" width="100%" height="500px")
+	include partials/footer.jade

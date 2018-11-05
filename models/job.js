@@ -5,29 +5,26 @@ var jobSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    company: {
+    compensation: {
         type: String,
         required: true
     },
-    city: {
+    education: {
         type: String,
         required: true
     },
-    state: {
+    location: {
         type: String,
         required: true
     },
     details: {
-        type: String,
-        required: true
+        type: String
     },
-    shortDetails: {
-        type: String,
-        required: true
+    requiredSkills: {
+        type: String
     },
-    category: {
-        type: String,
-        required: true
+    benefits: {
+        type: String
     },
     applicants: [{
         fullname: {

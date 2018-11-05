@@ -1,26 +1,74 @@
 extends ../layout
 
 block content
-	video(autoplay muted loop id="myVideo")
-		source(src="videos/World - 1992.mp4" type="video/mp4")
-	include partials/navbar.jade
-	div(class="container-fluid")
-		div(class="row" id="mainContent")
-			div(class="col-md-4")
-				h3(class="text-center") Upload Your Resume
-				center
-					img(class="img-fluid" src="icons/document.png")
-			div(class="col-md-4")
-				h3(class="text-center") Match With A Job in Your Area
-				center
-					img(class="img-fluid" src="icons/pin.png")
-			div(class="col-md-4")
-				h3(class="text-center") Get Hired
-				center
-					img(class="img-fluid" src="icons/hand-shake.png")
-	div(class="content")
-		h2(class="text-center") Connect with a job you love.
-		h6(class="text-center") We're here to connect driven people with the world’s most innovative companies.
-		center
-			button(class="btn btn-primary")
-				a(href="/static/upload" id="alink") Upload Your Resume
+	include partials/mainnavbar.jade
+	div(id="margin")
+	div(class="container")
+		div(class="row")
+			div(class="col-md-12")
+				h1(id="title") Partner With Us
+				p We believe in changing the status quo and our existence is to partner with leaders who seeks to implement cultural diversity and bring cohesiveness into his or her organization.
+		div(class="row")
+			div(class="col-md-12")
+				img(src="../images/bebetter.jpg" width="100%" height="500px")
+		br
+		div(class="row")
+			div(class="col-md-12")
+				img(src="../images/light.jpg" width="100%" height="500px")
+		br
+		div(class="row")
+			div(class="col-md-12")
+				h2(id="sub") Accelerate your growth by partnering with us for your Executive needs
+				h3(id="sub") Under the elements of, retained or contingency search:
+				p We are different than the big competitors who promotes the idea of diversity recruitment while having 0 diversity in their own firms. Match the values of our pool of c-level talents with your organizational objectives by opening the doorway to Female and minority executives. We consistently network with large events to expand on our passive pool of excutives.
+		br
+		div(class="row")
+			div(class="col-md-12")
+				img(src="../images/exec.jpg" width="100%" height="500px")
+		br
+		div(class="row")
+			div(class="col-md-12")
+				p Human identity is anchored in producing great work and release massive amount of endorphin.
+		br
+		div(class="row")
+			div(class="col-md-12")
+				img(src="../images/man.jpg" width="100%" height="500px")
+		br
+		div(class="row")
+			div(class="col-md-12")
+				img(src="../images/tower.jpg" width="100%" height="500px")
+		br
+		div(class="row")
+			div(class="col-md-12")
+				img(src="../images/buildings.png" width="100%" height="500px")
+		br
+		div(class="row")
+			div(class="col-md-12")
+				h5() Partner With Us
+		br
+		div(class="row")
+			div(class="col-md-6")
+				img(src="../images/bi.jpg" width="100%")
+			div(class="col-md-6")
+				img(src="../images/woman.jpg" width="100%")
+		br
+		div(class="row")
+			div(class="col-md-12")
+				h5() Women in leadership
+		br
+		div(class="row")
+			div(class="col-md-12")
+				img(src="../images/women.jpg" width="100%" height="500px")
+		br
+		div(class="row")
+			div(class="col-md-12")
+				h5(id="sub") Quickly fill-in your staff by partnering with us for your temporary needs
+				p Our goal is to understand your unique objective and outline a job analyst with candidates who will work well and adapt quickly to your organization’s culture. We provide fast office staff for your temporary needs by partnering with universities and attend career events.
+		br
+		div(class="row")
+			div(class="col-md-12")
+				img(src="../images/work.jpg" width="100%" height="500px")
+		br
+		div(class="row")
+			div(class="col-md-12")
+				img(src="../images/laugh.jpg" width="100%" height="500px")

@@ -36,6 +36,18 @@ router.get('/contactus', function(req, res, next) {
   res.render('static/contactus', { title: 'Paragon Executives | Contact Us' });
 });
 
+router.get('/careers', function(req, res, next) {
+  res.render('static/careers', { title: 'Paragon Executives | Careers' });
+});
+
+router.get('/video', function(req, res, next) {
+  res.render('static/video', { title: 'Paragon Executives | Introduction' });
+});
+
+router.get('/candidates', function(req, res, next) {
+  res.render('static/candidates', { title: 'Paragon Executives | Candidates' });
+});
+
 router.get('/login', function(req, res, next) {
   res.render('login', { title: 'Paragon Executives | Employee Login' });
 });

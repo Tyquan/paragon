@@ -2,27 +2,29 @@ extends ../layout
 
 block content
 	include partials/mainnavbar.jade
+	div(id="margin")
 	div(class="container")
 		div(class="row")
 			div(class="col-md-12")
-				h1(class="text-center") Available Jobs
+				img(src="../images/growth.jpg" width="100%" height="300px")
 		hr
 		div(class="customDisplay")
 			each d in data
 				div(id="jobsContainer")
 					div(class="row")
-						div(class="col-sm-6")
-							h4
+						div(class="col-sm-12")
+							h4 Title: 
 								a(href=`/static/application/${d.id}`)= d.title
-							p= d.company
+							h5 Compensation: 
+								span= d.compensation
+					div(class="row")
 						div(class="col-sm-6")
-							h5
-								span= d.city 
-								span , 
-								span= d.state
+							h5 Location: 
+								span= d.location
 					div(class="row")
 						div(class="col-sm-12")
-							h6= d.shortDetails
+							h5 Education: 
+								span= d.education
 							br
 							a(href=`/static/application/${d.id}`)
 								button(class="btn btn-outline-danger btn-lg btn-block") Apply
