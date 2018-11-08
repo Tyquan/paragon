@@ -150,6 +150,11 @@ a {
 }
 
 @media screen and (min-width: 320px) {
+
+	#mainImage {
+		width: 100%;
+		height: 350px;
+	}
 	/* Add some content at the bottom of the video/page */
 	.content {
 	    position: relative;
@@ -180,6 +185,10 @@ a {
 @media only screen and (min-width: 960px) {
 	#jobsContainer {
 		width: 48%;
+	}
+	#mainImage {
+		width: 100%;
+		height: 500px;
 	}
 	.content {
 	    position: fixed;

@@ -1,8 +1,8 @@
 module.exports = {
     "emailService": 'gmail',
-    "emailReciever": 'ttyquan0104@gmail.com',
+    "emailReciever": 'paragonexse@gmail.com',
     "emailAuth": {
-    	"user": "tjreddick@gmail.com",
+    	"user": "weemapleshop@gmail.com",
     	"pass": "Jamela17!"
     }
 };
